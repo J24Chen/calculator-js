@@ -69,11 +69,13 @@ function evalButtonPress(keypress){
             resetDisplayOnNextButton = false;
             display.textContent += ".";
             decimalButton.disabled = true;
+            break;
         
         case "%":
             resetDisplayOnNextButton = false;
-            result = display.textContent;
-            display.textContent = result / 0.01;
+            let temp = display.textContent;
+            display.textContent = temp * 0.01;
+            break;
 
         default:
             if(display.textContent == 0 || resetDisplayOnNextButton === true) {
